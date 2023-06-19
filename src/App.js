@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./componentes/Header/Header";
+import Footer from "./componentes/Footer/footer";
+import Home from "./page/Home/Home";
+import Nav from "./componentes/nav/nav";
+import "./style.css"
+import Card from "./componentes/Card/Card";
+
+import StyledGlobal, {ContainerMain, TelaInteira} from "./styledGlobal";
 
 function App() {
+
+  function reproduzirVideo() {
+    alert("O vídeo está sendo reproduzido")
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <StyledGlobal/>
+
+    {/* <div class="tela-inteira"> */}
+    <TelaInteira>
+      <Header/>
+
+        <ContainerMain>
+            <Nav/>
+
+            <Home reproduz={reproduzirVideo}/>
+          </ContainerMain>
+
+        
+      <Footer/>
+    {/* </div> */}
+    </TelaInteira>
+  </>
   );
 }
 
